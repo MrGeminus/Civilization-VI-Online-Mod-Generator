@@ -1,0 +1,341 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+}
+body {
+  background-color: cornflowerblue;
+}
+.select-Container {
+  border-radius: 0.25rem;
+  margin-bottom: 0.1rem;
+}
+.selectMenu {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.selectedOption {
+  position: relative;
+  width: 100%;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: #333399;
+  border-radius: 0.3rem;
+  order: 0;
+}
+.selectedOption::after {
+  content: "";
+  position: absolute;
+  background: url("icons/chevron-down.svg");
+  background-size: 0.9rem;
+  background-repeat: no-repeat;
+  height: 0.9rem;
+  width: 0.9rem;
+  right: 6.5%;
+  top: 0.9rem;
+}
+.selectGroup {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: #003366;
+  order: 0;
+}
+.searchContainer input {
+  position: absolute;
+  width: 100%;
+  padding: 0.75rem 2.45rem 0.75rem 1rem;
+  margin-top: 0.02rem;
+  font-size: 0.9rem;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="%23333399"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>');
+  background-position: right 0.8rem center;
+  background-size: 0.9rem;
+  background-repeat: no-repeat;
+  border: 0.5rem solid #333399;
+  border-radius: 0.3rem 0.3rem 0 0;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+.searchContainer input:focus {
+  outline: none;
+}
+.selectMenu .optionContainer.active ~ .searchContainer input {
+  opacity: 1;
+  pointer-events: auto;
+}
+.selectMenu .optionContainer {
+  position: absolute;
+  list-style: none;
+  width: 100%;
+  max-height: 0;
+  color: #ffffff;
+  background-color: #333399;
+  border-radius: 0 0 0.3rem 0.3rem;
+  overflow: hidden;
+  opacity: 0;
+  z-index: 2;
+  transition: all 0.4s;
+  order: 1;
+}
+.selectMenu .optionContainer.withoutSearch {
+  border-radius: 0.3rem;
+}
+.selectMenu .optionContainer.active {
+  max-height: 15rem;
+  margin-top: 6.5rem;
+  opacity: 1;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+.selectMenu .optionContainer.withoutSearch.active {
+  margin-top: 2.8rem;
+}
+.selectMenu .optionContainer.active + .selectedOption::after {
+  transform: rotateX(180deg);
+  top: 1rem;
+}
+.selectMenu .option,
+.selectedOption {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+  background-color: #333399;
+  cursor: pointer;
+}
+.selectMenu .option:hover {
+  background-color: #3399ff;
+}
+.selectMenu label {
+  cursor: pointer;
+}
+.selectMenu .option input {
+  display: none;
+}
+.checkBox-Container {
+  position: relative;
+}
+.checkBox-Container input[type="checkbox"] {
+  display: none;
+}
+.checkBox-Container input[type="checkbox"]:checked + label::before {
+  transform: scale(1) rotateZ(0deg);
+}
+.checkBox-Container input[type="checkbox"]:checked + label::after {
+  background-color: #333399;
+}
+.checkBox-Container label {
+  font-size: 0.9rem;
+}
+.checkBox-Container label::before {
+  content: "";
+  position: absolute;
+  width: 1.05rem;
+  height: 1rem;
+  border-radius: 0.3rem;
+  background: url("icons/check.svg");
+  background-repeat: no-repeat;
+  right: 0.17rem;
+  top: 0.2rem;
+  transform: scale(0) rotateZ(180deg);
+  transition: all 0.4s;
+  z-index: 1;
+}
+.checkBox-Container label::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border: 0.2rem solid #333399;
+  border-radius: 0.3rem;
+  background-color: #333399;
+  transition: background-color ease-in 0.4s;
+  right: 0;
+  top: 0;
+}
+.number-Container {
+  position: relative;
+  height: 2.3rem;
+  border-radius: 0.3rem;
+}
+.number-Container input {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  background-color: #333399;
+  border: 0.1rem solid #333399;
+  border-radius: 0.3rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: none;
+  transition: all 0.9s;
+}
+.number-Container .higher {
+  position: absolute;
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: url("icons/chevron-right.svg");
+  background-repeat: no-repeat;
+  right: 1.1rem;
+  top: 30%;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.9s;
+}
+.number-Container .lower {
+  position: absolute;
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  background: url("icons/chevron-left.svg");
+  background-repeat: no-repeat;
+  left: 1.5rem;
+  top: 30%;
+  opacity: 0;
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.9s;
+}
+.number-Container:hover,
+.number-Container:focus {
+  width: 7rem;
+  border: 0.1rem solid #ffffff;
+}
+.number-Container:hover .higher,
+.number-Container:focus .higher {
+  right: 0.8rem;
+  opacity: 1;
+}
+.number-Container:hover .lower,
+.number-Container:focus .lower {
+  left: 1.1rem;
+  opacity: 1;
+}
+.textInput {
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding: 0.5rem;
+  background-color: #333399;
+  border: 0.1rem solid #333399;
+  border-radius: 0.3rem;
+  transition: ease-in 0.4s;
+}
+.textInput:focus {
+  border: 0.1rem solid #ffffff;
+}
+.notValid {
+  border: 0.1rem solid #ff0000;
+}
+.textAreaInput {
+  font-size: 0.9rem;
+  color: #ffffff;
+  padding: 0.5rem;
+  background-color: #333399;
+  border: 0.1rem solid #333399;
+  border-radius: 0.3rem;
+  transition: border ease-in 0.4s;
+  scrollbar-width: thin;
+}
+.textAreaInput:focus {
+  border: 0.1rem solid #ffffff;
+}
+.btnAdd {
+  border: 0.1rem solid #333399;
+  background: url("icons/plus.svg");
+  background-repeat: no-repeat;
+  background-color: #333399;
+  background-size: 0.9rem;
+  background-position: center;
+  height: 1.5rem;
+  transition: ease-in 0.4s;
+  cursor: pointer;
+}
+.btnRemove {
+  border: 0.1rem solid #333399;
+  background: url("icons/minus.svg");
+  background-repeat: no-repeat;
+  background-color: #333399;
+  background-size: 0.9rem;
+  background-position: center;
+  height: 1.5rem;
+  transition: ease-in 0.4s;
+  cursor: pointer;
+}
+.btnAdd:hover {
+  background-color: #3399ff;
+  border: 0.1rem solid #ffffff;
+}
+.btnRemove:hover {
+  background-color: #3399ff;
+  border: 0.1rem solid #ffffff;
+}
+.btnNext {
+  height: 2.5rem;
+  color: #ffffff;
+  background-color: #333399;
+  border: 0.1rem solid #333399;
+  cursor: pointer;
+  transition: ease-in 0.4s;
+}
+.btnNext:hover {
+  background-color: #3399ff;
+  border: 0.1rem solid #ffffff;
+}
+.btnPriv {
+  height: 2.5rem;
+  color: #ffffff;
+  background-color: #333399;
+  border: 0.1rem solid #333399;
+  cursor: pointer;
+  transition: ease-in 0.4s;
+}
+.btnPriv:hover {
+  background-color: #3399ff;
+  border: 0.1rem solid #ffffff;
+}
+.btnSubmit {
+  height: 2.5rem;
+  color: #ffffff;
+  background-color: #333399;
+  border: 0.1rem solid #333399;
+  cursor: pointer;
+  transition: ease-in 0.4s;
+}
+.btnSubmit:hover {
+  background-color: #3399ff;
+  border: 0.1rem solid #ffffff;
+}
+.nano {
+  width: 1.5rem;
+}
+.micro {
+  width: 5rem;
+}
+.extra-small {
+  width: 7rem;
+}
+.small {
+  width: 9rem;
+}
+.medium {
+  width: 13rem;
+}
+.large {
+  width: 15rem;
+}
+.rounded-circle {
+  border-radius: 5rem;
+}
+.rounded-rectangle {
+  border-radius: 0.3rem;
+}

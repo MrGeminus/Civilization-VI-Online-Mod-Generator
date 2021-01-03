@@ -70,6 +70,8 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  transition: opacity ease-in 1s;
 }
 .select-label,
 .input-label,
@@ -103,7 +105,7 @@ form {
   background-repeat: no-repeat;
   height: 0.9rem;
   width: 0.9rem;
-  right: 6.5%;
+  right: 1.5rem;
   top: 0.9rem;
 }
 .selectGroup {
@@ -417,9 +419,13 @@ form {
 .extra-large {
   width: 20rem;
 }
+.humanges{
+  width: 41rem;
+}
 .mw {
   max-width: 20rem;
   min-width: 20rem;
+  min-height: 15rem;
   max-height: 15rem;
 }
 .rounded-circle {
@@ -447,10 +453,15 @@ form {
   justify-content: center;
   margin-bottom: 1.5rem;
 }
+.text-Container {
+  margin-top: 1.5rem;
+}
 .hide {
   display: none;
+}
+.hiddenInput{
   opacity: 0;
-  z-index: 0;
+  transition: opacity ease-in 1s;
 }
 .yieldAmount_twocolumns {
   display: flex;

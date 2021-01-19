@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GameInfo>
-    <BeliefClasses>
-		<!-- This match up to a code defined enumeration. Do not change their order unless you also change BeliefClassTypes enum -->
-		<Row> 
-		    <BeliefClassType>BELIEF_CLASS_PANTHEON</BeliefClassType>
-		</Row>
-		<Row> 
-		    <BeliefClassType>BELIEF_CLASS_FOLLOWER</BeliefClassType>
-		</Row>
-		<Row> 
-		    <BeliefClassType>BELIEF_CLASS_WORSHIP</BeliefClassType>
-		</Row>
-		<Row> 
-		    <BeliefClassType>BELIEF_CLASS_FOUNDER</BeliefClassType>
-		</Row>
-		<Row> 
-		    <BeliefClassType>BELIEF_CLASS_ENHANCER</BeliefClassType>
-		</Row>
-	</BeliefClasses>
 	<Modifiers>
 		<Row>
 			<ModifierId>DANCE_OF_THE_AURORA_FAITHTUNDRAADJACENCY</ModifierId>
@@ -599,6 +581,335 @@
 		<Row>
 			<ModifierId>ALLOW_DAR_E_MEHR</ModifierId>
 			<ModifierType>MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BUILDING</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>PAPAL_PRIMACY_PRESSURE_ON_ADOPTION</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_RELIGION_ENABLE_AWARDS_ENVOY_RELIGIOUS_PRESSURE</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>LADY_OF_THE_REEDS_PRODUCTION2_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>PLOT_HAS_REEDS_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>LADY_OF_THE_REEDS_PRODUCTION2</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>RIVER_GODDESS_HOLY_SITE_AMENITIES</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>RIVER_GODDESS_HOLY_SITE_AMENITIES_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_CITY_DISTRICTS_ADJUST_DISTRICT_AMENITY</ModifierType>
+			<SubjectRequirementSetId>PLOT_HAS_HOLY_SITE_RIVER_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>RIVER_GODDESS_HOLY_SITE_HOUSING</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>RIVER_GODDESS_HOLY_SITE_HOUSING_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_CITY_DISTRICTS_ADJUST_DISTRICT_HOUSING</ModifierType>
+			<SubjectRequirementSetId>PLOT_HAS_HOLY_SITE_RIVER_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>GODDESS_OF_FIRE_FEATURES_FAITH</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>GODDESS_OF_FIRE_FEATURES_FAITH_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>PLOT_HAS_GODDES_FIRE_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>DIVINE_SPARK_SCIENTIST</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>DIVINE_SPARK_SCIENTIST_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_CITY_ADJUST_GREAT_PERSON_POINT</ModifierType>
+			<SubjectRequirementSetId>BUILDING_IS_LIBRARY</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>DIVINE_SPARK_WRITER</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>DIVINE_SPARK_WRITER_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_CITY_ADJUST_GREAT_PERSON_POINT</ModifierType>
+			<SubjectRequirementSetId>BUILDING_IS_AMPHITHEATER</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>GODDESS_OF_FESTIVALS_PLANTATION_CULTURE</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>GODDESS_OF_FESTIVALS_PLANTATION_CULTURE_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>PLOT_HAS_PLANTATION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>FERTILITY_RITES_BUILDER</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_HAS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>FERTILITY_RITES_BUILDER_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_GRANT_UNIT_IN_CAPITAL</ModifierType>
+			<SubjectRequirementSetId>PLAYER_HAS_AT_LEAST_ONE_CITY_REQUIREMENTS</SubjectRequirementSetId>
+			<RunOnce>true</RunOnce>
+			<Permanent>true</Permanent>
+		</Row>
+		<Row>
+			<ModifierId>RELIGIOUS_SETTLEMENTS_SETTLER</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_HAS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>RELIGIOUS_SETTLEMENTS_SETTLER_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_GRANT_UNIT_IN_CAPITAL</ModifierType>
+			<SubjectRequirementSetId>PLAYER_HAS_AT_LEAST_ONE_CITY_REQUIREMENTS</SubjectRequirementSetId>
+			<RunOnce>true</RunOnce>
+			<Permanent>true</Permanent>
+		</Row>
+		<Row>
+			<ModifierId>EARTH_GODDESS_APPEAL_FAITH</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>EARTH_GODDESS_APPEAL_FAITH_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>PLOT_BREATHTAKING_APPEAL</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>INITIATION_RITES_HEALING_DISPERSAL</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_HAS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>INITIATION_RITES_HEALING_DISPERSAL_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADJUST_HEALING_FROM_DISPERSAL</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>GODDESS_OF_THE_HUNT_CAMP_PRODUCTION</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>GODDESS_OF_THE_HUNT_CAMP_PRODUCTION_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>PLOT_HAS_CAMP_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>GOD_OF_CRAFTSMEN_STRATEGIC_IMPROVED_PRODUCTION</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>GOD_OF_CRAFTSMEN_STRATEGIC_IMPROVED_PRODUCTION_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>PLOT_HAS_STRATEGIC_IMPROVED_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>GOD_OF_CRAFTSMEN_STRATEGIC_IMPROVED_FAITH</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_PANTHEON_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>GOD_OF_CRAFTSMEN_STRATEGIC_IMPROVED_FAITH_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>PLOT_HAS_STRATEGIC_IMPROVED_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>HOLY_WATERS_HEALING</ModifierId>
+			<ModifierType>MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>HOLY_WATERS_HEALING_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>HOLY_WATERS_HEALING_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_ALL_UNITS_ADJUST_HEAL_RELIGION_PER_TURN</ModifierType>
+			<SubjectRequirementSetId>HOLY_WATERS_HEALING_MODIFIER_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>FEED_THE_WORLD_SHRINE_FOOD3</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>FEED_THE_WORLD_SHRINE_FOOD3_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_BUILDING_YIELD_CHANGE</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>FEED_THE_WORLD_TEMPLE_FOOD3</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>FEED_THE_WORLD_TEMPLE_FOOD3_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_BUILDING_YIELD_CHANGE</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>FEED_THE_WORLD_SHRINE_HOUSING</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_RELIGION_HAS_SHRINE</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>FEED_THE_WORLD_SHRINE_HOUSING_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_CITY_ADJUST_BUILDING_HOUSING</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>FEED_THE_WORLD_TEMPLE_HOUSING</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_RELIGION_HAS_TEMPLE</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>FEED_THE_WORLD_TEMPLE_HOUSING_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_CITY_ADJUST_BUILDING_HOUSING</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>RELIGIOUS_COMMUNITY_HOLY_SITE_TRADING</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>RELIGIOUS_COMMUNITY_HOLY_SITE_TRADING_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL</ModifierType>
+			<SubjectRequirementSetId>CITY_HAS_HOLY_SITE</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>RELIGIOUS_COMMUNITY_SHRINE_TRADING</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>RELIGIOUS_COMMUNITY_SHRINE_TRADING_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL</ModifierType>
+			<SubjectRequirementSetId>BUILDING_IS_SHRINE</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>RELIGIOUS_COMMUNITY_TEMPLE_TRADING</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>RELIGIOUS_COMMUNITY_TEMPLE_TRADING_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL</ModifierType>
+			<SubjectRequirementSetId>BUILDING_IS_TEMPLE_XP2</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>RELIGIOUS_COMMUNITY_TIER3_TRADING</ModifierId>
+			<ModifierType>MODIFIER_ALL_CITIES_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>RELIGIOUS_COMMUNITY_TIER3_TRADING_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_CITY_ADJUST_TRADE_ROUTE_YIELD_FOR_INTERNATIONAL</ModifierType>
+			<SubjectRequirementSetId>BUILDING_IS_TIER3_HOLY_SITE</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>WORK_ETHIC_ADJACENCY_PRODUCTION_2</ModifierId>
+			<ModifierType>MODIFIER_ALL_DISTRICTS_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS</ModifierType>
+			<SubjectRequirementSetId>WORK_ETHIC_ADJACENCY_PRODUCTION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>WORK_ETHIC_ADJACENCY_PRODUCTION</ModifierId>
+			<ModifierType>MODIFIER_ALL_DISTRICTS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>CITY_FOLLOWS_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>WORK_ETHIC_ADJACENCY_PRODUCTION_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_DISTRICT_ADJUST_YIELD_BASED_ON_ADJACENCY_BONUS</ModifierType>
+			<SubjectRequirementSetId>DISTRICT_IS_HOLY_SITE</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>CROSS_CULTURAL_DIALOGUE_SCIENCE_FOLLOWER</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_FOUNDED_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>CROSS_CULTURAL_DIALOGUE_SCIENCE_FOLLOWER_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BELIEF_YIELD</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>PILGRIMAGE_FAITH_CITY</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_FOUNDED_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>PILGRIMAGE_FAITH_CITY_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BELIEF_YIELD</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>SACRED_PLACES_FAITH_WONDER_CITY</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_FOUNDED_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>SACRED_PLACES_FAITH_WONDER_CITY_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BELIEF_YIELD</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>SACRED_PLACES_CULTURE_WONDER_CITY</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_FOUNDED_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>SACRED_PLACES_CULTURE_WONDER_CITY_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BELIEF_YIELD</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>SACRED_PLACES_SCIENCE_WONDER_CITY</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_FOUNDED_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>SACRED_PLACES_SCIENCE_WONDER_CITY_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BELIEF_YIELD</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>SACRED_PLACES_GOLD_WONDER_CITY</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_FOUNDED_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>SACRED_PLACES_GOLD_WONDER_CITY_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BELIEF_YIELD</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>WORLD_CHURCH_CULTURE_FOLLOWER</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_FOUNDED_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>WORLD_CHURCH_CULTURE_FOLLOWER_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BELIEF_YIELD</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>TITHE_GOLD_CITY</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_FOUNDED_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>TITHE_GOLD_CITY_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_RELIGION_ADD_RELIGIOUS_BELIEF_YIELD</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>WARRIOR_MONKS_CULTURE_BOMB_TRIGGER_HOLY_SITE</ModifierId>
+			<ModifierType>MODIFIER_ALL_PLAYERS_ATTACH_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_FOUNDED_RELIGION_REQUIREMENTS</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>WARRIOR_MONKS_CULTURE_BOMB_TRIGGER_HOLY_SITE_MODIFIER</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADD_CULTURE_BOMB_TRIGGER</ModifierType>
 		</Row>
 	</Modifiers>
 	<ModifierArguments>
@@ -1903,11 +2214,11 @@
 			<RequirementType>REQUIREMENT_UNIT_TAG_MATCHES</RequirementType>
 			<Inverse>true</Inverse>
 		</Row>
-    <Row>
-      <RequirementId>REQUIRES_NON_SUPPORT_UNIT</RequirementId>
-      <RequirementType>REQUIREMENT_UNIT_TAG_MATCHES</RequirementType>
-      <Inverse>true</Inverse>
-    </Row>
+		<Row>
+			<RequirementId>REQUIRES_NON_SUPPORT_UNIT</RequirementId>
+			<RequirementType>REQUIREMENT_UNIT_TAG_MATCHES</RequirementType>
+			<Inverse>true</Inverse>
+		</Row>
 	</Requirements>
 	<RequirementArguments>
 		<Row>
@@ -2055,11 +2366,16 @@
 			<Name>Tag</Name>
 			<Value>CLASS_RELIGIOUS</Value>
 		</Row>
-    <Row>
-      <RequirementId>REQUIRES_NON_SUPPORT_UNIT</RequirementId>
-      <Name>Tag</Name>
-      <Value>CLASS_SUPPORT</Value>
-    </Row>
+		<Row>
+			<RequirementId>REQUIRES_NON_SUPPORT_UNIT</RequirementId>
+			<Name>Tag</Name>
+			<Value>CLASS_SUPPORT</Value>
+		</Row>
+		<Row>
+			<ModifierId>PAPAL_PRIMACY_PRESSURE_ON_ADOPTION</ModifierId>
+			<Name>Amount</Name>
+			<Value>200</Value>
+		</Row>
 	</RequirementArguments>
 	<RequirementSetRequirements>
 		<Row>
@@ -2094,10 +2410,10 @@
 			<RequirementSetId>DEFENDER_OF_FAITH_REQUIREMENTS</RequirementSetId>
 			<RequirementId>REQUIRES_NON_RELIGIOUS_UNIT</RequirementId>
 		</Row>
-        <Row>
-            <RequirementSetId>DEFENDER_OF_FAITH_REQUIREMENTS</RequirementSetId>
-            <RequirementId>REQUIRES_NON_SUPPORT_UNIT</RequirementId>
-        </Row>
+		<Row>
+			<RequirementSetId>DEFENDER_OF_FAITH_REQUIREMENTS</RequirementSetId>
+			<RequirementId>REQUIRES_NON_SUPPORT_UNIT</RequirementId>
+		</Row>
 		<Row>
 			<RequirementSetId>JUST_WAR_REQUIREMENTS</RequirementSetId>
 			<RequirementId>REQUIRES_PLAYER_FOUNDED_RELIGION</RequirementId>
@@ -2110,10 +2426,10 @@
 			<RequirementSetId>JUST_WAR_REQUIREMENTS</RequirementSetId>
 			<RequirementId>REQUIRES_NON_RELIGIOUS_UNIT</RequirementId>
 		</Row>
-        <Row>
-            <RequirementSetId>JUST_WAR_REQUIREMENTS</RequirementSetId>
-            <RequirementId>REQUIRES_NON_SUPPORT_UNIT</RequirementId>
-        </Row>
+		<Row>
+			<RequirementSetId>JUST_WAR_REQUIREMENTS</RequirementSetId>
+			<RequirementId>REQUIRES_NON_SUPPORT_UNIT</RequirementId>
+		</Row>
 		<Row>
 			<RequirementSetId>CITY_FOLLOWS_RELIGION_HAS_SHRINE</RequirementSetId>
 			<RequirementId>REQUIRES_CITY_FOLLOWS_RELIGION</RequirementId>
@@ -2240,15 +2556,15 @@
 		</Row>
 	</RequirementSetRequirements>
 	<ModifierStrings>
-		<Row> 
-		    <ModifierId>DEFENDER_OF_FAITH_COMBAT_BONUS_MODIFIER</ModifierId>
-		    <Context>Preview</Context> 
-		    <Text>LOC_PROMOTION_DEFENDER_OF_FAITH_DESCRIPTION</Text>
+		<Row>
+			<ModifierId>DEFENDER_OF_FAITH_COMBAT_BONUS_MODIFIER</ModifierId>
+			<Context>Preview</Context>
+			<Text>LOC_PROMOTION_DEFENDER_OF_FAITH_DESCRIPTION</Text>
 		</Row>
-		<Row> 
-		    <ModifierId>JUST_WAR_COMBAT_BONUS_MODIFIER</ModifierId> 
-		    <Context>Preview</Context>
-		    <Text>LOC_PROMOTION_JUST_WAR_DESCRIPTION</Text>
+		<Row>
+			<ModifierId>JUST_WAR_COMBAT_BONUS_MODIFIER</ModifierId>
+			<Context>Preview</Context>
+			<Text>LOC_PROMOTION_JUST_WAR_DESCRIPTION</Text>
 		</Row>
 	</ModifierStrings>
 </GameInfo>

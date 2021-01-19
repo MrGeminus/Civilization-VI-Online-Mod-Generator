@@ -107,3 +107,33 @@ function previousPage() {
   }
 }
 logic();
+let moreMod = document.querySelector(".btnMore");
+function createTab() {
+  let tabContainer = document.querySelector(".tabContainer");
+  tabContainer.children[1].style.display = "none";
+  tabContainer.children[1].classList.remove("full-width");
+  let tabDiv = document.createElement('div');
+  let buttonDiv = document.createElement('button');
+  let closeIcon = document.createElement('span');
+  tabDiv.className = "tab push-down";
+  buttonDiv.innerText = "Modifier"
+  buttonDiv.className = "btnTab activeTab";
+  buttonDiv.setAttribute("type", "button");
+  buttonDiv.setAttribute("data-for-tab", "1");
+  closeIcon.className = "closeTab";
+  buttonDiv.appendChild(closeIcon);
+  tabContainer.appendChild(tabDiv);
+  tabContainer.children[0].appendChild(buttonDiv)
+  let closeIcons = document.querySelectorAll(".closeTab");
+  console.log(closeIcons)
+  closeIcons.forEach(closeIcon => {
+    let buttonDiv = closeIcon.parentElement;
+    function closeTab() {
+      tabDiv.remove();
+      buttonDiv.remove();
+    }
+    closeIcon.addEventListener("click", closeTab)
+    console.log(closeIcon)
+  });
+}
+moreMod.addEventListener("click", createTab)

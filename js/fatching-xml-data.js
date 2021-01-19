@@ -1,12 +1,3 @@
-export { modifiersArrays, modifierArgumentsArrays, requirementSetsArrays };
-var modifiersArrays = [];
-var modifierArgumentsArrays = [];
-var requirementSetsArrays = [];
-var requirementsArrays = [];
-var requirementArgumentsArrays = [];
-var requirementSetRequirementsArrays = [];
-var modifierStringsArrays = [];
-console.log(modifiersArrays.length)
 document.addEventListener('DOMContentLoaded', () => {
     let beliefs = "../xml/beliefs.xml";
     fetch(beliefs)
@@ -14,70 +5,55 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(beliefsData => {
             let beliefsDataParser = new DOMParser();
             let xmlBeliefs = beliefsDataParser.parseFromString(beliefsData, "application/xml");
-            processFetchedData(xmlBeliefs);
-        });
+            let modifiers = xmlBeliefs.getElementsByTagName("Modifiers")[0].children;
+            let modifierArguments = xmlBeliefs.getElementsByTagName("ModifierArguments")[0].children;
+            processFetchedData(modifiers);
+            processFetchedData(modifierArguments);
+        })
 });
-function processFetchedData(xmlBeliefs) {
-    let modifiers = xmlBeliefs.getElementsByTagName("Modifiers")[0].children;
-    let modifierId = "ModifierId";
-    let modifierType = "ModifierType";
-    let subjectRequirementSetId = "SubjectRequirementSetId";
-    let modifiersArray = [];
-    createThreeArrays(modifiers, modifierId, modifierType, subjectRequirementSetId, modifiersArray);
-    modifiersArrays.push.apply(modifiersArrays, modifiersArray);
-    console.log(modifiersArrays.length)
-    let modifierArguments = xmlBeliefs.getElementsByTagName("ModifierArguments")[0].children;
-    let name = "Name";
-    let value = "Value";
-    createThreeArrays(modifierArguments, modifierId, name, value, modifierArgumentsArrays);
-    let requirementSets = xmlBeliefs.getElementsByTagName("RequirementSets")[0].children;
-    let requirementSetId = "RequirementSetId";
-    let requirementSetType = "RequirementSetType";
-    createTwoArrays(requirementSets, requirementSetId, requirementSetType, requirementSetsArrays);
-}
-function createTwoArrays(mainQuery, queryOne, queryTwo, array) {
-    let firstArray = [];
-    let secondArray = [];
-    for (let i = 0; i < mainQuery.length; i++) {
-        let variableOne = mainQuery[i].getElementsByTagName(queryOne)[0].textContent;
-        let variableTwo = mainQuery[i].getElementsByTagName(queryTwo)[0].textContent;
-        firstArray.push(variableOne);
-        secondArray.push(variableTwo);
+function processFetchedData(tag) {
+    let textArray = [];
+    for (let i = 0; i < tag.length; i++) {
+        textArray.push(tag[i].getElementsByTagName("ModifierId")[0].firstChild.textContent)
     }
-    mergeBothArraysInOne(firstArray, secondArray, array);
+    appendOptionsToTheHTMLFile(textArray, "beliefModifiers", "selectedBeliefModifiers", "beliefModifiers")
+    //appendOptionsToTheHTMLFile(textArray, "beliefModifierArguments", "selectedBeliefModifierArguments", "beliefModifierArguments")
 }
-function createThreeArrays(mainQuery, queryOne, queryTwo, queryThree, array) {
-    let firstArray = [];
-    let secondArray = [];
-    let thirdArray = [];
-    for (let i = 0; i < mainQuery.length; i++) {
-        let variableOne = mainQuery[i].getElementsByTagName(queryOne)[0].textContent;
-        let variableTwo = mainQuery[i].getElementsByTagName(queryTwo)[0].textContent;
-        if (mainQuery[i].getElementsByTagName(queryThree).length !== 0) {
-            let variableThree;
-            variableThree = mainQuery[i].getElementsByTagName(queryThree)[0].firstChild.textContent;
-            thirdArray.push(variableThree);
+function appendOptionsToTheHTMLFile(labelText, inputID, inputName, parentElementID) {
+    let getParentElement = document.getElementById(`${parentElementID}`);
+    for (let i = 0; i < labelText.length; i++) {
+        let li = document.createElement('li');
+        let input = document.createElement('input');
+        let label = document.createElement('label');
+        label.textContent = labelText[i];
+        li.className = 'option';
+        input.setAttribute("id", `${inputID}${[i + 2]}`);
+        input.setAttribute("name", `${inputName}`);
+        input.setAttribute("value", `${labelText[i].toLowerCase()}`);
+        input.setAttribute("type", "checkbox");
+        label.setAttribute("for", `${inputID}${[i + 2]}`);
+        getParentElement.appendChild(li);
+        li.appendChild(input);
+        li.appendChild(label);
+    };
+}
+let arr = ["../xml/Beliefs.xml", "../xml/Expansion1_Beliefs.xml"],
+    cnt = 0, xhr = new XMLHttpRequest(), method = "GET";
+
+function formatXml(xmlDoc) {
+    let x = xmlDoc.getElementsByTagName("ModifierId");
+    //console.log(x);
+}
+
+function getXml() {
+    xhr.open(method, arr[cnt], true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            formatXml(xhr.responseXML);
+            cnt++;
+            if (cnt < arr.length) getXml();
         }
-        else {
-            let variableThree = "";
-            thirdArray.push(variableThree);
-        }
-        firstArray.push(variableOne);
-        secondArray.push(variableTwo);
-    }
-    mergeAllThreeArraysInOne(firstArray, secondArray, thirdArray, array);
+    };
+    xhr.send();
 }
-function mergeBothArraysInOne(firstArray, secondArray, mainArray) {
-    for (let i = 0; i < firstArray.length; i++) {
-        let row = [];
-        row.push(firstArray[i], secondArray[i]);
-        mainArray.push(row);
-    }
-}
-function mergeAllThreeArraysInOne(firstArray, secondArray, thirdArray, mainArray) {
-    for (let i = 0; i < firstArray.length; i++) {
-        let row = [];
-        row.push(firstArray[i], secondArray[i], thirdArray[i]);
-        mainArray.push(row);
-    }
-}
+getXml();
